@@ -11,3 +11,7 @@ The soultion is to disable Jekyll by adding a `.nojekyll` file. This file has to
 
 - [NextJS Issue Github Pages and `_next`](https://github.com/vercel/next.js/issues/9460#issuecomment-626085056) sub directory.
 - [Blog post about this feature.](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/)
+
+## Subdomain CNAME Records
+
+Use `<username-or-org-name>.github.io` as the CNAME record. Works for project pages with `<username-or-org-name>.github.io/<project-name>` urls.
