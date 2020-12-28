@@ -8,7 +8,7 @@
 	"author": "Josh Pollock",
 	"license": "MIT",
 	"dependencies": {
-		"@digital-garden-builder/builder": "0.0.13"
+		"@digital-garden-builder/builder": "0.0.14"
 	},
 	"devDependencies": {
 		"serve": "^11.3.2"
