@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Shelob9/josh-code-garden)
+
 # Code Meadow
 
 Uses [Digital Garden Builder](http://digitalgardenbuilder.app/), which uses Github to store data. Each digital garden starts from this template.
