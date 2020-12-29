@@ -13,4 +13,6 @@ Uses [Digital Garden Builder](http://digitalgardenbuilder.app/), which uses Gith
   - `yarn garden`
 - Serve the generated HTML on localhost
   - `yarn start`
-  - [http://localhost:2999](http://localhost:2999) 
+  - [http://localhost:2999](http://localhost:2999)
+- Update the CLI to latest version
+  - `yarn update`
