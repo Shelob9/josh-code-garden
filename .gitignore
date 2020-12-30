@@ -2,6 +2,7 @@ digitial-garden-builder
 digital-garden-builder/*
 digital-garden-builder
 out
+_docs
 docs
 # Logs
 logs
