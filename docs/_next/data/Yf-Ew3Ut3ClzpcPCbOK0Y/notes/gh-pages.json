@@ -1,1 +1,0 @@
-{"pageProps":{"note":{"title":"Github Pages","content":"## 404 For Assets In Directories Starting With An Underscore\r\n\r\nAdd a `.nojekyll` file.\r\n\r\n- [NextJS Issue Github Pages and `_next`](https://github.com/vercel/next.js/issues/9460#issuecomment-626085056) sub directory.\r\n\r\n","slug":"gh-pages","references":[]},"slug":"gh-pages"},"__N_SSG":true}
