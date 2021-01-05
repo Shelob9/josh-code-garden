@@ -4,6 +4,8 @@ slug: javascript
 ---
 
 - [[react]]
+- [[gatsby]]
+- [[chai]]
 
 ## Create Object From Two Arrays
 
