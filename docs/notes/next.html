@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@JoshBotDotJs"/><meta name="twitter:creator" content="@josh412"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:site_name" content="Code Meadow"/><title>Next.js | Code Meadow</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="A [[react]] static site generator
+
+
+## Adding Testing With Jest
+
+&gt; See [[gh-actions-vercel.md]]
+
+- [Setup Jest](https://medium.com/frontend-digest/setting-up-testing-library-with-nextjs-a9702cbde32d)
+- [If using CSS Modules, mock CS"/><meta property="og:title" content="Next.js"/><meta property="og:description" content="Notes about Next.js by Josh Pollock"/><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/dba994aa4de8c9558d6f.css" as="style"/><link rel="stylesheet" href="/_next/static/css/dba994aa4de8c9558d6f.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/main-e4ef205fca5d93de439a.js" as="script"/><link rel="preload" href="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.0aee811b7a2ba0b587bf.js" as="script"/><link rel="preload" href="/_next/static/chunks/eeb0540607e8d823f414da745296801d6a447ba7.858a4b022f4a82e30045.js" as="script"/><link rel="preload" href="/_next/static/chunks/e9acf14add5c4f122717233c5b8bc320320f96b1.9770bfbcaacf48f0cbd9.js" as="script"/><link rel="preload" href="/_next/static/chunks/3a4d373e4f729ad3d1487c5b24727311a83f72b6.1b64e79295a1df5d1055.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-16bfa60dc5fa04db03f2.js" as="script"/><link rel="preload" href="/_next/static/chunks/cf2f3e6cb2c7250386e9cd655729b7b20c55eb51.d50059c19d19ed2ffbbe.js" as="script"/><link rel="preload" href="/_next/static/chunks/65446de8fdf4c7aed854cb7642630d677689ed10.8f2b9d51a19826ed9b23.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/notes/%5Bslug%5D-33ce1adf9c0915fcb744.js" as="script"/></head><body><div id="__next"><div class="layout"><header id="header" role="banner"><a aria-current="page" class="" href="/"><span>Code Meadow</span></a><div class="controls"><button title="Show Graph visualisation" aria-label="Show Graph visualisation" class="graph-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" class="graph-closed"><g fill="none" stroke-width="2"><circle cx="11.733" cy="3.181" r="1.902"></circle><circle cx="16.864" cy="10.861" r="1.902"></circle><circle cx="7.47" cy="16.822" r="1.902"></circle><circle cx="3.046" cy="6.275" r="1.902"></circle><circle cx="9.372" cy="10.861" r="1.902"></circle><line x1="11.635" x2="14.655" y1="10.861" y2="10.861"></line><line x1="10" x2="10.895" y1="8.959" y2="5.573"></line><line x1="7.47" x2="4.5" y1="9.68" y2="7.5"></line><line x1="8.25" x2="8.809" y1="14.92" y2="13.088"></line></g></svg></button><label class="dark-mode-toggle" aria-label="Activate dark mode" title="Activate dark mode"><input type="checkbox" checked=""/><div></div></label></div></header><main><div class="note-columns-scrolling-container"><div class="note-columns-container"><div class="note-container note-open note-focus animate-pulse opacity-40"><div class="note-buttons"></div><div id="" class="note-content"><h1 class="animate-pulse">Next.js</h1><div class="prose note-markdown"><p class="mb-4"> <!-- -->A <a href="/notes/react">react</a> static site generator</p>
+<h2 class="mb-4"> <!-- -->Adding Testing With Jest</h2>
+<blockquote>
+<p class="mb-4"> <!-- -->See <a href="/notes/gh-actions-vercel.md">gh-actions-vercel.md</a></p>
+</blockquote>
+<ul class="mb-4 list-inside list-disc">
+<li><a href="https://medium.com/frontend-digest/setting-up-testing-library-with-nextjs-a9702cbde32d">Setup Jest</a></li>
+<li><a href="https://jestjs.io/docs/en/webpack#mocking-css-modules">If using CSS Modules, mock CSS modules</a></li>
+<li>If using fetch add polyfill to setupTests.js<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li><code>import &quot;cross-fetch/polyfill&quot;;</code></li>
+</ul>
+</li>
+<li>Add Github Action:</li>
+</ul>
+<pre><code>name: CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: yarn
+      - name: Run tests
+        run: yarn test --ci
+</code></pre>
+<h2 class="mb-4"> <!-- -->Window undefined</h2>
+<p class="mb-4"> <!-- -->https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr</p>
+<pre><code>import dynamic from &quot;next/dynamic&quot;;
+
+const DynamicComponentWithNoSSR = dynamic(
+	() =&gt; import(&quot;../components/hello3&quot;),
+	{ ssr: false } //Important Part
+);
+
+function Home() {
+	return (
+		&lt;div&gt;
+			&lt;Header /&gt;
+			&lt;DynamicComponentWithNoSSR /&gt;
+			&lt;p&gt;HOME PAGE is here!&lt;/p&gt;
+		&lt;/div&gt;
+	);
+}
+
+export default Home;
+</code></pre>
+<h2 class="mb-4"> <!-- -->Next.js With MDX and TypeScript</h2>
+<ul class="mb-4 list-inside list-disc">
+<li>https://sergiodxa.com/articles/next-tailwind</li>
+<li>https://codeconqueror.com/blog/building-a-blog-with-next-js</li>
+<li><code>yarn create next-app --example with-mdx with-mdx-app</code></li>
+<li>Modify pageExtensions in withMdx config to include &#x27;ts&#x27; and &#x27;tsx&#x27;. Do this in next.config.js<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Without this, adding <code>/pages/about.js</code> would work, but no <code>/pages/about.tsx</code></li>
+</ul>
+</li>
+</ul>
+<pre><code>const withMDX = require(&quot;@next/mdx&quot;)({
+	extension: /\.mdx?$/,
+});
+module.exports = withMDX({
+	pageExtensions: [&quot;js&quot;, &quot;jsx&quot;, &quot;mdx&quot;, &quot;tsx&quot;, &quot;ts&quot;],
+});
+</code></pre>
+<h2 class="mb-4"> <!-- -->Ad TypeScript To nextjs</h2>
+<ul class="mb-4 list-inside list-disc">
+<li><a href="https://blog.tailwindcss.com/building-the-tailwind-blog">Building Tailwind&#x27;s Blog with Tailwind and NextJS</a></li>
+<li><a href="https://dev.to/notrab/get-up-and-running-with-tailwind-css-and-next-js-3a73">Tailwing + NextJS Tutorial</a></li>
+<li><a href="https://github.com/tailwindlabs/tailwindcss-setup-examples/blob/master/examples/nextjs">NextJS + Tailwind Example</a></li>
+</ul>
+<ol>
+<li><code>yarn add tailwindcss postcss-import autoprefixer @fullhuman/postcss-purgecss</code></li>
+<li><code>yarn tailwind init</code></li>
+<li>Create postcss.config.js</li>
+</ol>
+<pre><code>module.exports = {
+	plugins: [&quot;tailwindcss&quot;, &quot;autoprefixer&quot;],
+};
+</code></pre>
+<ol start="3">
+<li>tailwind.config.js</li>
+</ol>
+<pre><code>module.exports = {
+	theme: {
+		extend: {},
+	},
+	variants: {},
+	plugins: [],
+	future: {
+		removeDeprecatedGapUtilities: true,
+	},
+	purge: {
+		mode: &quot;all&quot;,
+		content: [
+			&quot;pages/**/*.js&quot;,
+			&quot;pages/**/*.tsx&quot;,
+			&quot;components/**/*.js&quot;,
+			&quot;components/**/*.tsx&quot;,
+		],
+		options: {
+			keyframes: true,
+		},
+	},
+};
+</code></pre></div></div></div><div id="" class="note-content">Two</div></div></div></main><footer class="bg-white dark:bg-gray-300 border-t border-gray-500 shadow"><div class="container mx-auto flex py-8"><div class="w-full mx-auto flex flex-wrap"><div class="flex w-full lg:w-1/2 "><div class="px-8"><h3 class="font-bold text-gray-900"><a href="/about">About</a></h3><p class="py-4 text-gray-600 text-sm">By <!-- -->Josh Pollock<!-- -->. Built with <a href="https://digitalgardenbuilder.app/" target="_blank" rel="noopener noreferrer">Digital Garden Builder</a></p></div></div><div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right"><div class="px-8"><h3 class="font-bold text-gray-900">Social</h3><ul class="list-reset items-center text-sm pt-3"><li><a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1" href="https://twitter.com/@josh412">Twitter</a></li></ul></div></div><div class="flex w-full lg:justify-end lg:text-right"></div></div></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"note":{"title":"Next.js","content":"A [[react]] static site generator\r\n\r\n\r\n## Adding Testing With Jest\r\n\r\n\u003e See [[gh-actions-vercel.md]]\r\n\r\n- [Setup Jest](https://medium.com/frontend-digest/setting-up-testing-library-with-nextjs-a9702cbde32d)\r\n- [If using CSS Modules, mock CSS modules](https://jestjs.io/docs/en/webpack#mocking-css-modules)\r\n- If using fetch add polyfill to setupTests.js\r\n  - `import \"cross-fetch/polyfill\";`\r\n- Add Github Action:\r\n\r\n```yml\r\nname: CI\r\non: push\r\njobs:\r\n  build:\r\n    runs-on: ubuntu-latest\r\n    steps:\r\n      - uses: actions/checkout@v2\r\n      - name: Install\r\n        run: yarn\r\n      - name: Run tests\r\n        run: yarn test --ci\r\n```\r\n\r\n## Window undefined\r\n\r\nhttps://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr\r\n\r\n```jsx\r\nimport dynamic from \"next/dynamic\";\r\n\r\nconst DynamicComponentWithNoSSR = dynamic(\r\n\t() =\u003e import(\"../components/hello3\"),\r\n\t{ ssr: false } //Important Part\r\n);\r\n\r\nfunction Home() {\r\n\treturn (\r\n\t\t\u003cdiv\u003e\r\n\t\t\t\u003cHeader /\u003e\r\n\t\t\t\u003cDynamicComponentWithNoSSR /\u003e\r\n\t\t\t\u003cp\u003eHOME PAGE is here!\u003c/p\u003e\r\n\t\t\u003c/div\u003e\r\n\t);\r\n}\r\n\r\nexport default Home;\r\n```\r\n\r\n## Next.js With MDX and TypeScript\r\n\r\n- https://sergiodxa.com/articles/next-tailwind\r\n- https://codeconqueror.com/blog/building-a-blog-with-next-js\r\n- `yarn create next-app --example with-mdx with-mdx-app`\r\n- Modify pageExtensions in withMdx config to include 'ts' and 'tsx'. Do this in next.config.js\r\n  - Without this, adding `/pages/about.js` would work, but no `/pages/about.tsx`\r\n\r\n```js\r\nconst withMDX = require(\"@next/mdx\")({\r\n\textension: /\\.mdx?$/,\r\n});\r\nmodule.exports = withMDX({\r\n\tpageExtensions: [\"js\", \"jsx\", \"mdx\", \"tsx\", \"ts\"],\r\n});\r\n```\r\n\r\n## Ad TypeScript To nextjs\r\n\r\n- [Building Tailwind's Blog with Tailwind and NextJS](https://blog.tailwindcss.com/building-the-tailwind-blog)\r\n- [Tailwing + NextJS Tutorial](https://dev.to/notrab/get-up-and-running-with-tailwind-css-and-next-js-3a73)\r\n- [NextJS + Tailwind Example](https://github.com/tailwindlabs/tailwindcss-setup-examples/blob/master/examples/nextjs)\r\n\r\n1. `yarn add tailwindcss postcss-import autoprefixer @fullhuman/postcss-purgecss`\r\n2. `yarn tailwind init`\r\n3. Create postcss.config.js\r\n\r\n```js\r\nmodule.exports = {\r\n\tplugins: [\"tailwindcss\", \"autoprefixer\"],\r\n};\r\n```\r\n\r\n3. tailwind.config.js\r\n\r\n```js\r\nmodule.exports = {\r\n\ttheme: {\r\n\t\textend: {},\r\n\t},\r\n\tvariants: {},\r\n\tplugins: [],\r\n\tfuture: {\r\n\t\tremoveDeprecatedGapUtilities: true,\r\n\t},\r\n\tpurge: {\r\n\t\tmode: \"all\",\r\n\t\tcontent: [\r\n\t\t\t\"pages/**/*.js\",\r\n\t\t\t\"pages/**/*.tsx\",\r\n\t\t\t\"components/**/*.js\",\r\n\t\t\t\"components/**/*.tsx\",\r\n\t\t],\r\n\t\toptions: {\r\n\t\t\tkeyframes: true,\r\n\t\t},\r\n\t},\r\n};\r\n```\r\n\r\n","slug":"next","references":[{"slug":"react","url":"/notes/react"}]},"slug":"next"},"__N_SSG":true},"page":"/notes/[slug]","query":{"slug":"next"},"buildId":"5mc3gxVoSeGhHZ-JK7tKY","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/chunks/polyfills-1031cf0bba78a873b9b2.js"></script><script src="/_next/static/chunks/main-e4ef205fca5d93de439a.js" async=""></script><script src="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/_next/static/chunks/framework.0aee811b7a2ba0b587bf.js" async=""></script><script src="/_next/static/chunks/eeb0540607e8d823f414da745296801d6a447ba7.858a4b022f4a82e30045.js" async=""></script><script src="/_next/static/chunks/e9acf14add5c4f122717233c5b8bc320320f96b1.9770bfbcaacf48f0cbd9.js" async=""></script><script src="/_next/static/chunks/3a4d373e4f729ad3d1487c5b24727311a83f72b6.1b64e79295a1df5d1055.js" async=""></script><script src="/_next/static/chunks/pages/_app-16bfa60dc5fa04db03f2.js" async=""></script><script src="/_next/static/chunks/cf2f3e6cb2c7250386e9cd655729b7b20c55eb51.d50059c19d19ed2ffbbe.js" async=""></script><script src="/_next/static/chunks/65446de8fdf4c7aed854cb7642630d677689ed10.8f2b9d51a19826ed9b23.js" async=""></script><script src="/_next/static/chunks/pages/notes/%5Bslug%5D-33ce1adf9c0915fcb744.js" async=""></script><script src="/_next/static/5mc3gxVoSeGhHZ-JK7tKY/_buildManifest.js" async=""></script><script src="/_next/static/5mc3gxVoSeGhHZ-JK7tKY/_ssgManifest.js" async=""></script></body></html>
