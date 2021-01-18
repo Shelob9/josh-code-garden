@@ -5,10 +5,9 @@ slug: next
  
 A [[react]] static site generator
 
-
 ## Adding Testing With Jest
 
-> See [[gh-actions-vercel.md]]
+> See [[gh-actions-vercel]]
 
 - [Setup Jest](https://medium.com/frontend-digest/setting-up-testing-library-with-nextjs-a9702cbde32d)
 - [If using CSS Modules, mock CSS modules](https://jestjs.io/docs/en/webpack#mocking-css-modules)
