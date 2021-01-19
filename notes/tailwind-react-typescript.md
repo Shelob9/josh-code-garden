@@ -1,6 +1,6 @@
 --- 
 title: Laravel + React + Typescript
-slug: taulwind-react-typescript
+slug: tailwind-react-typescript
 ---
 
 Notes on a "TRTL" stack.
