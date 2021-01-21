@@ -2,7 +2,7 @@
 title: Code Meadow 
 slug: code-meadow
 ---
-  This is [Josh](https://joshpress.net)'s collection of in progress tutorials, useful snippets and other useful stuff related to [[php : PHP]] and [[javascript: JavaScripts ]] development.
+   This is [Josh](https://joshpress.net)'s collection of in progress tutorials, useful snippets and other useful stuff related to [[php : PHP]] and [[javascript: JavaScript ]] development.
 
 This is site is built using [Digital Garden Builder](https://digitalgardenbuilder.app/). [I also have a digital garden, not related to writing code.](https://code.joshpress.net)
 
