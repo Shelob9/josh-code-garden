@@ -21,7 +21,7 @@ Here are some of the notes I am working on now:
 
 At work, my main focus is building internal apps -- user telemetry and customer support applications. This helps us understand our users and the [[wordPress]]ecosytem better. I get to build most of that with [[Laravel]] and [[React]], which is super fun.
 
-My fun side project is [[digital-garden-builder]], which is built with [[nextjs]] and a part of [[meadow]].
+My fun side project is [[digital-garden-builder]], which is built with [[next: NextJS]] and a part of [[meadow]].
 
 ### Saturday Drive
 
