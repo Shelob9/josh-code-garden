@@ -2,11 +2,11 @@
 title: Code Meadow 
 slug: code-meadow
 ---
-This is [Josh](https://joshpress.net)'s collection of in progress tutorials, useful snippets and other useful stuff related to [[php]] and [[javascript]] development.
+   This is [Josh](https://joshpress.net)'s collection of in progress tutorials, useful snippets and other useful stuff related to [[php : PHP]] and [[javascript: JavaScript ]] development.
 
 This is site is built using [Digital Garden Builder](https://digitalgardenbuilder.app/). [I also have a digital garden, not related to writing code.](https://code.joshpress.net)
 
-Right now, it functions to test my theory that hosting these sites with [gh-pages]] is a good idea.
+Right now, it functions to test my theory that hosting these sites with [[gh-pages]] is a good idea.
 
 ## What Is Growing
 
