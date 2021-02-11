@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@JoshBotDotJs"/><meta name="twitter:creator" content="@josh412"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:site_name" content="Code Meadow"/><title>Laravel Vapor | Code Meadow</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="- [Serverless Laravel Course](https://serverlesslaravelcourse.com/)
+- [[laravel]]
+
+[Laravel Vapor](https://vapor.laravel.com/) is a [[serverless]] deployment solution for Laravel, built on AWS. It simplifies orchestrating microservices s"/><meta property="og:title" content="Laravel Vapor"/><meta property="og:description" content="Notes about Laravel Vapor by Josh Pollock"/><meta name="next-head-count" content="14"/><link rel="preload" href="/_next/static/css/d775fab888e97a088f8d.css" as="style"/><link rel="stylesheet" href="/_next/static/css/d775fab888e97a088f8d.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/main-6af9946a2519c79c69af.js" as="script"/><link rel="preload" href="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.0aee811b7a2ba0b587bf.js" as="script"/><link rel="preload" href="/_next/static/chunks/eeb0540607e8d823f414da745296801d6a447ba7.481ce1df83e29fdab985.js" as="script"/><link rel="preload" href="/_next/static/chunks/e9acf14add5c4f122717233c5b8bc320320f96b1.af08081eb2a8a0707206.js" as="script"/><link rel="preload" href="/_next/static/chunks/3a4d373e4f729ad3d1487c5b24727311a83f72b6.a6e4cceaacf75dd96edb.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-737febf5088f37bd4af8.js" as="script"/><link rel="preload" href="/_next/static/chunks/cf2f3e6cb2c7250386e9cd655729b7b20c55eb51.c4fc838959c470884ff9.js" as="script"/><link rel="preload" href="/_next/static/chunks/65446de8fdf4c7aed854cb7642630d677689ed10.ceba6928f5d73cccb595.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/notes/%5Bslug%5D-cc63db50d5065760d96a.js" as="script"/></head><body><div id="__next"><div class="layout"><header id="header" role="banner"><a aria-current="page" class="" href="/"><span>Code Meadow</span></a><div class="controls"><button title="Show Graph Visualization" aria-label="Show Graph Visualization" class="graph-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" class="graph-closed"><g fill="none" stroke-width="2"><circle cx="11.733" cy="3.181" r="1.902"></circle><circle cx="16.864" cy="10.861" r="1.902"></circle><circle cx="7.47" cy="16.822" r="1.902"></circle><circle cx="3.046" cy="6.275" r="1.902"></circle><circle cx="9.372" cy="10.861" r="1.902"></circle><line x1="11.635" x2="14.655" y1="10.861" y2="10.861"></line><line x1="10" x2="10.895" y1="8.959" y2="5.573"></line><line x1="7.47" x2="4.5" y1="9.68" y2="7.5"></line><line x1="8.25" x2="8.809" y1="14.92" y2="13.088"></line></g></svg></button><label class="dark-mode-toggle" aria-label="Activate dark mode" title="Activate dark mode"><input type="checkbox" checked=""/><div></div></label></div></header><main><div class="note-columns-scrolling-container"><div class="note-columns-container"><div class="note-container note-open note-focus visible note-position-one"><div class="note-buttons"></div><div id="" class="note-content"><h1 class="animate-pulse">Laravel Vapor</h1><div class="prose note-markdown"><ul class="mb-4 list-inside list-disc">
+<li><a href="https://serverlesslaravelcourse.com/">Serverless Laravel Course</a></li>
+<li><a href="/notes/laravel">laravel</a></li>
+</ul>
+<p class="mb-4"> <a href="https://vapor.laravel.com/">Laravel Vapor</a> is a <a href="/notes/serverless">serverless</a> deployment solution for Laravel, built on AWS. It simplifies orchestrating microservices such as the database server, CDN, PHP web application, queue processing, email sending, caching, etc. as well as the logging, provisioning and monitoring the applications. Yes, you could build all of this yourself with AWS, but that would require a lot more code then the 1 Vapor YML file and a ton more work. And then you&#x27;d have to maintain it.</p>
+<p class="mb-4"> <!-- -->I&#x27;ve used Vapor for internal applications at Saturday Drive. With a little bit of experimentation and a lot of things I learned from the <a href="https://serverlesslaravelcourse.com/">Serverless Laravel Course</a>, we were able to create a highly scalbabe application with minimal cost or worry.</p>
+<h2 class="mb-4"> <!-- -->Database</h2>
+<p class="mb-4"> <!-- -->Find this sticky note.</p>
+<ul class="mb-4 list-inside list-disc">
+<li>Serverless vs Fixed<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Aurora takes too long to scale up for many app types.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Minumuma capactity with automatic scaling is an advantage of serverless.</li>
+<li>Will not pay most of the time for staging database, beacuse its paused.</li>
+<li>Cost is complex and can be real expensive.</li>
+<li>Requires a VPC.</li>
+<li>Self-healing and more throughput.</li>
+</ul>
+</li>
+<li>Over-provisioning a RDS is fixed cost, still managed.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Probably over-paying, but predictable cost.</li>
+<li>Risk is high traffic breaking DB<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Limit queue concurrency.</li>
+<li>Add Redis cache level.</li>
+</ul>
+</li>
+<li>You can set the scaling of storage in AWS console to auto.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Scaling/ Failover<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>A failover database comes online if production db goes down.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Failover takes ~60 or more.</li>
+<li>Failover DB is recommend, doubles database cost.</li>
+<li>Also allows for zero downtime db Scaling.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Vapor will bring failover up, scale up primary, switch back to primary, then scale up failover.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="mb-4"> <!-- -->Queues</h2>
+<ul class="mb-4 list-inside list-disc">
+<li>With standard queue, can not assume order. Can not assume that job will only run once.</li>
+<li>Assume SQS is down, to prevent loosing jobs. Always use retry.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>https://laravel.com/docs/8.x/helpers#method-retry</li>
+</ul>
+</li>
+<li>Queues run in there <a href="https://blog.laravel.com/vapor-using-a-separate-lambda-function-for-queues">own Lamda</a>.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Use <code>queue-memory</code> to set the RAM.</li>
+</ul>
+</li>
+</ul>
+<h3 class="mb-4"> <!-- -->Retry Laravel Job</h3>
+<ul class="mb-4 list-inside list-disc">
+<li>https://serverlesslaravelcourse.com/video/27</li>
+</ul>
+<pre><code>      return retry(20, function () {
+          dispatch( new SomeJob( ) );
+      }, 200 );
+</code></pre>
+<h3 class="mb-4"> <!-- -->Ensuring A Job Only Runs Once</h3>
+<ul class="mb-4 list-inside list-disc">
+<li>https://serverlesslaravelcourse.com/video/28</li>
+<li>Set a queue timeout. Something a little longer then longest jobs.</li>
+<li>Default timeout is 70s, so then it runs again. Potential loop.</li>
+<li>Job timing out is fine, job running multiple times is not.</li>
+<li>Always check database is onlin.</li>
+</ul>
+<h2 class="mb-4"> <!-- -->Other</h2>
+<ul class="mb-4 list-inside list-disc">
+<li>&quot;warn&quot; - avoid 2s post-deploy delay.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Bring X containers online before deployment and rewarmed every 5 minutes.</li>
+<li>Warming, not too expensive. Polling warms for 40 containers would be ~$1.</li>
+</ul>
+</li>
+<li>Vapor &quot;secrets&quot; are for big environment variables. Acccesed using the <code>env()</code> helper function.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Environment variables can be seen in plain text in vapor UI. Secrets can not.</li>
+</ul>
+</li>
+</ul>
+<h2 class="mb-4"> <!-- -->Concurrency</h2>
+<p class="mb-4"> <!-- -->Concurrency is how many Lamdas can exist at once. Each web requests gets one of Lamdas, with the memory set.</p>
+<ul class="mb-4 list-inside list-disc">
+<li>https://blog.laravel.com/vapor-using-a-separate-lambda-function-for-queues</li>
+<li>Three Lamdas: web requests,cli,queue.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Each has <code>*-concurrency</code>, <code>*-memory</code>, <code>*-timeout</code></li>
+<li>Adding <code>*-memory</code> ads more processing</li>
+</ul>
+</li>
+<li>Warming can slow requests happening during warming. Concurrency keeps X containers always online.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Could mean paying to keep things online all the, or could avoid paying for warming. Can save a lot of money, if enough consitent traffic.</li>
+<li>By default 1000 is default Lamda concurrency.<!-- -->
+<ul class="mb-4 list-inside list-disc">
+<li>Limit cuncurrency in Vapor to limit costs.</li>
+<li>AWS has built in protections.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="note-container note-closed  invisible note-position-two"><div id="" class="note-content"></div></div><div class="note-container note-closed  invisible note-position-three"><div id="" class="note-content"></div></div></div></div></main><footer class="bg-white dark:bg-gray-300 border-t border-gray-500 shadow"><div class="container mx-auto flex py-8"><div class="w-full mx-auto flex flex-wrap"><div class="flex w-full lg:w-1/2 "><div class="px-8"><h3 class="font-bold text-gray-900"><a href="/about">About</a></h3><p class="py-4 text-gray-600 text-sm">By <!-- -->Josh Pollock<!-- -->. Built with <a href="https://digitalgardenbuilder.app/" target="_blank" rel="noopener noreferrer">Digital Garden Builder</a></p></div></div><div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right"><div class="px-8"><h3 class="font-bold text-gray-900">Social</h3><ul class="list-reset items-center text-sm pt-3"><li><a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1" href="https://twitter.com/@josh412">Twitter</a></li></ul></div></div><div class="flex w-full lg:justify-end lg:text-right"></div></div></div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"note":{"title":"Laravel Vapor","content":"- [Serverless Laravel Course](https://serverlesslaravelcourse.com/)\r\n- [[laravel]]\r\n\r\n[Laravel Vapor](https://vapor.laravel.com/) is a [[serverless]] deployment solution for Laravel, built on AWS. It simplifies orchestrating microservices such as the database server, CDN, PHP web application, queue processing, email sending, caching, etc. as well as the logging, provisioning and monitoring the applications. Yes, you could build all of this yourself with AWS, but that would require a lot more code then the 1 Vapor YML file and a ton more work. And then you'd have to maintain it.\r\n\r\nI've used Vapor for internal applications at Saturday Drive. With a little bit of experimentation and a lot of things I learned from the [Serverless Laravel Course](https://serverlesslaravelcourse.com/), we were able to create a highly scalbabe application with minimal cost or worry.\r\n\r\n## Database\r\n\r\nFind this sticky note.\r\n\r\n- Serverless vs Fixed\r\n  - Aurora takes too long to scale up for many app types.\r\n    - Minumuma capactity with automatic scaling is an advantage of serverless.\r\n    - Will not pay most of the time for staging database, beacuse its paused.\r\n    - Cost is complex and can be real expensive.\r\n    - Requires a VPC.\r\n    - Self-healing and more throughput.\r\n  - Over-provisioning a RDS is fixed cost, still managed.\r\n    - Probably over-paying, but predictable cost.\r\n    - Risk is high traffic breaking DB\r\n      - Limit queue concurrency.\r\n      - Add Redis cache level.\r\n    - You can set the scaling of storage in AWS console to auto.\r\n- Scaling/ Failover\r\n  - A failover database comes online if production db goes down.\r\n    - Failover takes ~60 or more.\r\n    - Failover DB is recommend, doubles database cost.\r\n    - Also allows for zero downtime db Scaling.\r\n      - Vapor will bring failover up, scale up primary, switch back to primary, then scale up failover.\r\n\r\n## Queues\r\n\r\n- With standard queue, can not assume order. Can not assume that job will only run once.\r\n- Assume SQS is down, to prevent loosing jobs. Always use retry.\r\n  - https://laravel.com/docs/8.x/helpers#method-retry\r\n- Queues run in there [own Lamda](https://blog.laravel.com/vapor-using-a-separate-lambda-function-for-queues).\r\n  - Use `queue-memory` to set the RAM.\r\n\r\n### Retry Laravel Job\r\n\r\n- https://serverlesslaravelcourse.com/video/27\r\n\r\n```php\r\n      return retry(20, function () {\r\n          dispatch( new SomeJob( ) );\r\n      }, 200 );\r\n```\r\n\r\n### Ensuring A Job Only Runs Once\r\n\r\n- https://serverlesslaravelcourse.com/video/28\r\n- Set a queue timeout. Something a little longer then longest jobs.\r\n- Default timeout is 70s, so then it runs again. Potential loop.\r\n- Job timing out is fine, job running multiple times is not.\r\n- Always check database is onlin.\r\n\r\n## Other\r\n\r\n- \"warn\" - avoid 2s post-deploy delay.\r\n  - Bring X containers online before deployment and rewarmed every 5 minutes.\r\n  - Warming, not too expensive. Polling warms for 40 containers would be ~\\$1.\r\n- Vapor \"secrets\" are for big environment variables. Acccesed using the `env()` helper function.\r\n  - Environment variables can be seen in plain text in vapor UI. Secrets can not.\r\n\r\n## Concurrency\r\n\r\nConcurrency is how many Lamdas can exist at once. Each web requests gets one of Lamdas, with the memory set.\r\n\r\n- https://blog.laravel.com/vapor-using-a-separate-lambda-function-for-queues\r\n- Three Lamdas: web requests,cli,queue.\r\n  - Each has `*-concurrency`, `*-memory`, `*-timeout`\r\n  - Adding `*-memory` ads more processing\r\n- Warming can slow requests happening during warming. Concurrency keeps X containers always online.\r\n  - Could mean paying to keep things online all the, or could avoid paying for warming. Can save a lot of money, if enough consitent traffic.\r\n  - By default 1000 is default Lamda concurrency.\r\n    - Limit cuncurrency in Vapor to limit costs.\r\n    - AWS has built in protections.\r\n\r\n","slug":"laravel-vapor","references":[{"slug":"laravel","url":"/notes/laravel"}]},"slug":"laravel-vapor"},"__N_SSG":true},"page":"/notes/[slug]","query":{"slug":"laravel-vapor"},"buildId":"LvmER_-FW4zienYIal0e1","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/chunks/polyfills-695197e122f3a846e5cd.js"></script><script src="/_next/static/chunks/main-6af9946a2519c79c69af.js" async=""></script><script src="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/_next/static/chunks/framework.0aee811b7a2ba0b587bf.js" async=""></script><script src="/_next/static/chunks/eeb0540607e8d823f414da745296801d6a447ba7.481ce1df83e29fdab985.js" async=""></script><script src="/_next/static/chunks/e9acf14add5c4f122717233c5b8bc320320f96b1.af08081eb2a8a0707206.js" async=""></script><script src="/_next/static/chunks/3a4d373e4f729ad3d1487c5b24727311a83f72b6.a6e4cceaacf75dd96edb.js" async=""></script><script src="/_next/static/chunks/pages/_app-737febf5088f37bd4af8.js" async=""></script><script src="/_next/static/chunks/cf2f3e6cb2c7250386e9cd655729b7b20c55eb51.c4fc838959c470884ff9.js" async=""></script><script src="/_next/static/chunks/65446de8fdf4c7aed854cb7642630d677689ed10.ceba6928f5d73cccb595.js" async=""></script><script src="/_next/static/chunks/pages/notes/%5Bslug%5D-cc63db50d5065760d96a.js" async=""></script><script src="/_next/static/LvmER_-FW4zienYIal0e1/_buildManifest.js" async=""></script><script src="/_next/static/LvmER_-FW4zienYIal0e1/_ssgManifest.js" async=""></script></body></html>

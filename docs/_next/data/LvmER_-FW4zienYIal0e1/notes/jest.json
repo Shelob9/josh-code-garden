@@ -1,0 +1,1 @@
+{"pageProps":{"note":{"title":"Jest","content":" [[javascript]] testing framework.\n\n- [Documentation](https://jestjs.io/docs)\n\n## Mocking\n\n- [Code examples](https://github.com/HugoDF/jest-spy-mock-stub-reference/tree/master/src)","slug":"jest","references":[{"slug":"javascript","url":"/notes/javascript"}]},"slug":"jest"},"__N_SSG":true}
