@@ -2,7 +2,8 @@
 title: Code Meadow 
 slug: code-meadow
 ---
-   This is [Josh](https://joshpress.net)'s collection of in progress tutorials, useful snippets and other useful stuff related to [[php : PHP]] and [[javascript: JavaScript ]] development.
+
+This is [Josh](https://joshpress.net)'s collection of in progress tutorials, useful snippets and other useful stuff related to [[php : PHP]] and [[javascript: JavaScript ]] development.
 
 This is site is built using [Digital Garden Builder](https://digitalgardenbuilder.app/). [I also have a digital garden, not related to writing code.](https://code.joshpress.net)
 
@@ -19,15 +20,10 @@ Here are some of the notes I am working on now:
 
 ## What I Am Working On Now
 
-At work, my main focus is building internal apps -- user telemetry and customer support applications. This helps us understand our users and the [[wordPress]]ecosytem better. I get to build most of that with [[Laravel]] and [[React]], which is super fun.
+My fun side project is [[digital-garden-builder]], which is what this site is built with. [Digital Garden Builder](http://docs.digitalgardenbuilder.app/) uses the [[gitcms]] that I am working on for data storage. My goal is to build distributed peer 2 peer knowledge grpah apps.
 
-My fun side project is [[digital-garden-builder]], which is built with [[next: NextJS]] and a part of [[meadow]].
+### WordPress Plugin Template
 
-### Saturday Drive
+I maintain an opinionated [WordPress plugin starter template](https://shelob9.github.io/wordpress-plugin). It has local development, testing, Github actions and Composer-based dependency managemnet and autoloader setup. 
 
-At Saturday Drive, I do [[WordPress]], [[Laravel]] and [[React]] development:
-
-- [Ninja Forms](https://ninjaforms.com)
-- [Caldera Forms](https://calderaforms.com)
-  - [View Source](https://github.com/calderawp/caldera-forms)
-- [SendWP](https://sendwp.com)
+It also has a basic mode that has less stuff, just compiling React in a WordPress-safe way and a PHP file you can write PHP in.
