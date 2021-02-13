@@ -1,9 +1,8 @@
 ---
-title: JavaScript
+title: JavaScript 
 slug: javascript
 ---
-
-- [[react]]
+ - [[react]]
 - [[gatsby]]
 - [[chai]]
 
@@ -23,4 +22,35 @@ function(uniqueSet, dataSet) {
 	});
 	return Array.from(obj);
 }
+```
+
+## Find Item In Array Of Objects
+
+```
+function findById(id,items){
+    return items.find(u => u.id === id)
+};
+
+function isInArray(id,items){
+    return -1 !== items.findIndex(u => u.id === id );
+}
+```
+
+## Paste Events
+
+```
+const target = document.querySelector('div.target');
+
+target.addEventListener('paste', (event) => {
+    let paste = (event.clipboardData || window.clipboardData).getData('text');
+    paste = paste.toUpperCase();
+
+    const selection = window.getSelection();
+    if (!selection.rangeCount) return false;
+    selection.deleteFromDocument();
+    selection.getRangeAt(0).insertNode(document.createTextNode(paste));
+
+    event.preventDefault();
+});
+
 ```
