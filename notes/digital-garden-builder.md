@@ -7,7 +7,7 @@ Is a thing I am working on now. [Digital Garden Builder](https://digitalgardenbu
 
 - [Source](https://github.com/Shelob9/digitial-garden-builder)
   - If you would like to help with this project, please open an [issue](https://github.com/Shelob9/digitial-garden-builder/issues) or PR. Or send me [DM on Twitter](https://twitter.com/josh412);
-- Uses [[gitcms]]  
+- Uses [[gitcms]]. [See this PR](https://github.com/Shelob9/digitial-garden-builder/pull/19)
   
 ## What It Is Built With
 
