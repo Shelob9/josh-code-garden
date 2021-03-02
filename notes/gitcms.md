@@ -4,11 +4,11 @@ slug: gitcms
 ---
  GitCMS is a Git-based CMS with optional React components and Next.js-integrations that dreams of being a distributed knowledge graph. It is a work in progress.
 
->[View Source](https://github.com/Shelob9/gitcms)
+- [View Source](https://github.com/Shelob9/gitcms)
+- [View on NPM](https://www.npmjs.com/package/@digital-garden-builder/git-cms)
+- Install `yarn add @digital-garden-builder/git-cms`
 
-```sh
-yarn add @digital-garden-builder/git-cms
-```
+
 
 [Digital Garden Builder](https://docs.digitalgardenbuilder.app/) was partially developed as proof of concept for Git CMS. My hope is that others will be able to create there own front-ends for this API. I intend to make it especially useful to those creating mutli-author applications with markdown and block-based content and APIs.
 
