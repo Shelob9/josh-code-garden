@@ -25,12 +25,17 @@ npm install --global yarn
 ### PHP
 
 ```sh
-sudo apt install php7.3-cli
-sudo apt install php7.3-json php7.3-mbstring php7.3-curl php7.3-zip
+sudo apt install php-cli
+sudo apt install php7.4-json php7.4-mbstring php7.4-curl php7.4-zip
 
 ```
 
+#### Composer
+
+[Download and Install](https://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable)
+
 ```sh
+mv composer.phar /usr/local/bin/composer
 //https://askubuntu.com/a/1156100
 sudo chown -R $USER $HOME/.composer
 ```
