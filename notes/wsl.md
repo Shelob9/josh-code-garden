@@ -26,7 +26,7 @@ npm install --global yarn
 
 ```sh
 sudo apt install php-cli
-sudo apt install php7.4-json php7.4-mbstring php7.4-curl php7.4-zip
+sudo apt install php7.4-json php7.4-mbstring php7.4-curl php7.4-zip php-simplexml
 
 ```
 
