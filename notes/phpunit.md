@@ -31,4 +31,6 @@ Better option: - `composer update --no-dev -o` - `--no--dev` skips require-dev -
 * https://torquemag.io/2018/08/advanced-oop-for-wordpress-part-7-refactoring-is-an-opportunity-to-adopt-test-driven-development/
 * https://torquemag.io/2018/08/advanced-oop-for-wordpress-part-8-developing-new-features-for-extensible-wordpress-plugins-using-test-driven-development/
 * [Unit Testing Classes That Call Functions From WordPress core](https://dev.to/shelob9/unit-testing-classes-that-call-functions-form-wordpress-core-3h5p)
+* [Using the WordPress Test Suite](https://felix-arntz.me/blog/using-the-wordpress-test-suite/)
+* [WP_UnitTest_Factory: The Missing Documentation](https://wpdevelopment.courses/articles/wp-unittest-factory-documentation/)
 
