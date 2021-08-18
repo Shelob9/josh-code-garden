@@ -56,12 +56,18 @@ php -v
 
 #### Composer
 
-[Download and Install](https://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable)
-
 ```sh
 mv composer.phar /usr/local/bin/composer
 //https://askubuntu.com/a/1156100
 sudo chown -R $USER $HOME/.composer
+```
+
+Or:
+
+```sh
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+wget -O composer-setup.php https://getcomposer.org/installer
+composer -v
 ```
 
 ### Git In WSL
