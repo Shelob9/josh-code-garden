@@ -16,7 +16,13 @@ If using Debian, [install curl](https://www.cyberciti.biz/faq/howto-install-curl
 ```sh
 sudo apt update && sudo apt upgrade
 sudo apt install curl
+```
+
+Also: 
+
+```sh
  sudo apt-get install wget
+ sudo apt-get install git
 ```
 ### Node
 
@@ -77,7 +83,7 @@ composer -v
 
 ```sh
 git config --global user.name "Josh Pollock"
-git config --global user.email "josh.pollock@10up.com"
+git config --global user.email "jpollock412@gmail.com"
 git config --global core.autocrlf false
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
 cd ~/.ssh
