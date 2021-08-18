@@ -86,6 +86,8 @@ git config --global user.name "Josh Pollock"
 git config --global user.email "jpollock412@gmail.com"
 git config --global core.autocrlf false
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
+mkdir ~/.ssh
+chmod 600 ~/.ssh/id_rsa
 cd ~/.ssh
 cp /mnt/c/Users/jpoll/.ssh/id_rsa* .
 
