@@ -11,6 +11,13 @@ title: WSL
   
 ## Setup Ubuntu
 
+If using Debian, [install curl](https://www.cyberciti.biz/faq/howto-install-curl-command-on-debian-linux-using-apt-get/?__cf_chl_captcha_tk__=pmd_D_G0leeI9u751e9GZ34jC959kJTKWNYGSuWeIsLEESk-1629324863-0-gqNtZGzNAzujcnBszQj9)
+
+```sh
+sudo apt update && sudo apt upgrade
+sudo apt install curl
+ sudo apt-get install wget
+```
 ### Node
 
 - [Install Node With NVM](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04) - option 3.
@@ -22,11 +29,28 @@ nvm install lts/erbium
 npm install --global yarn
 ```
 
-### PHP
+### PHP 7.4
 
 ```sh
 sudo apt install php-cli
 sudo apt install php7.4-json php7.4-mbstring php7.4-curl php7.4-zip php-simplexml
+
+```
+
+### PHP8
+- [How to install PHP8 on debian](https://computingforgeeks.com/how-to-install-php-on-debian-linux/)
+
+```sh
+sudo apt update
+sudo apt -y upgrade
+sudo reboot
+sudo apt install -y lsb-release ca-certificates apt-transport-https software-properties-common
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/sury-php.list
+wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
+sudo apt update
+sudo apt install php8.0 -y
+sudo apt install php8.0-{mysql,cli,common,imap,ldap,xml,fpm,curl,mbstring,zip}
+php -v
 
 ```
 
